@@ -1,0 +1,97 @@
+M:\Authentication App\bin\Authentication App.dll.config
+M:\Authentication App\bin\Authentication App.dll
+M:\Authentication App\bin\Authentication App.pdb
+M:\Authentication App\bin\roslyn\csc.exe
+M:\Authentication App\bin\roslyn\csc.exe.config
+M:\Authentication App\bin\roslyn\csc.rsp
+M:\Authentication App\bin\roslyn\csi.exe
+M:\Authentication App\bin\roslyn\csi.exe.config
+M:\Authentication App\bin\roslyn\csi.rsp
+M:\Authentication App\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+M:\Authentication App\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+M:\Authentication App\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+M:\Authentication App\bin\roslyn\Microsoft.CodeAnalysis.dll
+M:\Authentication App\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+M:\Authentication App\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+M:\Authentication App\bin\roslyn\Microsoft.CSharp.Core.targets
+M:\Authentication App\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+M:\Authentication App\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+M:\Authentication App\bin\roslyn\Microsoft.Managed.Core.targets
+M:\Authentication App\bin\roslyn\Microsoft.VisualBasic.Core.targets
+M:\Authentication App\bin\roslyn\Microsoft.Win32.Primitives.dll
+M:\Authentication App\bin\roslyn\System.AppContext.dll
+M:\Authentication App\bin\roslyn\System.Collections.Immutable.dll
+M:\Authentication App\bin\roslyn\System.Console.dll
+M:\Authentication App\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+M:\Authentication App\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+M:\Authentication App\bin\roslyn\System.Diagnostics.StackTrace.dll
+M:\Authentication App\bin\roslyn\System.Globalization.Calendars.dll
+M:\Authentication App\bin\roslyn\System.IO.Compression.dll
+M:\Authentication App\bin\roslyn\System.IO.Compression.ZipFile.dll
+M:\Authentication App\bin\roslyn\System.IO.FileSystem.dll
+M:\Authentication App\bin\roslyn\System.IO.FileSystem.Primitives.dll
+M:\Authentication App\bin\roslyn\System.Net.Http.dll
+M:\Authentication App\bin\roslyn\System.Net.Sockets.dll
+M:\Authentication App\bin\roslyn\System.Reflection.Metadata.dll
+M:\Authentication App\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+M:\Authentication App\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+M:\Authentication App\bin\roslyn\System.Security.Cryptography.Encoding.dll
+M:\Authentication App\bin\roslyn\System.Security.Cryptography.Primitives.dll
+M:\Authentication App\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+M:\Authentication App\bin\roslyn\System.Text.Encoding.CodePages.dll
+M:\Authentication App\bin\roslyn\System.Threading.Tasks.Extensions.dll
+M:\Authentication App\bin\roslyn\System.ValueTuple.dll
+M:\Authentication App\bin\roslyn\System.Xml.ReaderWriter.dll
+M:\Authentication App\bin\roslyn\System.Xml.XmlDocument.dll
+M:\Authentication App\bin\roslyn\System.Xml.XPath.dll
+M:\Authentication App\bin\roslyn\System.Xml.XPath.XDocument.dll
+M:\Authentication App\bin\roslyn\vbc.exe
+M:\Authentication App\bin\roslyn\vbc.exe.config
+M:\Authentication App\bin\roslyn\vbc.rsp
+M:\Authentication App\bin\roslyn\VBCSCompiler.exe
+M:\Authentication App\bin\roslyn\VBCSCompiler.exe.config
+M:\Authentication App\bin\EntityFramework.dll
+M:\Authentication App\bin\EntityFramework.SqlServer.dll
+M:\Authentication App\bin\Microsoft.AspNet.Identity.Core.dll
+M:\Authentication App\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+M:\Authentication App\bin\Microsoft.AspNet.Identity.Owin.dll
+M:\Authentication App\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+M:\Authentication App\bin\Microsoft.Owin.dll
+M:\Authentication App\bin\Microsoft.Owin.Host.SystemWeb.dll
+M:\Authentication App\bin\Microsoft.Owin.Security.Cookies.dll
+M:\Authentication App\bin\Microsoft.Owin.Security.dll
+M:\Authentication App\bin\Microsoft.Owin.Security.OAuth.dll
+M:\Authentication App\bin\Microsoft.Web.Infrastructure.dll
+M:\Authentication App\bin\Newtonsoft.Json.dll
+M:\Authentication App\bin\Owin.dll
+M:\Authentication App\bin\System.Web.Helpers.dll
+M:\Authentication App\bin\System.Web.Mvc.dll
+M:\Authentication App\bin\System.Web.Razor.dll
+M:\Authentication App\bin\System.Web.Webpages.Deployment.dll
+M:\Authentication App\bin\System.Web.Webpages.dll
+M:\Authentication App\bin\System.Web.Webpages.Razor.dll
+M:\Authentication App\bin\EntityFramework.xml
+M:\Authentication App\bin\EntityFramework.SqlServer.xml
+M:\Authentication App\bin\Microsoft.AspNet.Identity.Core.xml
+M:\Authentication App\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+M:\Authentication App\bin\Microsoft.AspNet.Identity.Owin.xml
+M:\Authentication App\bin\Microsoft.Owin.xml
+M:\Authentication App\bin\Microsoft.Owin.Host.SystemWeb.xml
+M:\Authentication App\bin\Microsoft.Owin.Security.xml
+M:\Authentication App\bin\Microsoft.Owin.Security.Cookies.xml
+M:\Authentication App\bin\Microsoft.Owin.Security.OAuth.xml
+M:\Authentication App\bin\Newtonsoft.Json.xml
+M:\Authentication App\bin\System.Web.Razor.xml
+M:\Authentication App\bin\System.Web.Webpages.xml
+M:\Authentication App\bin\System.Web.Webpages.Deployment.xml
+M:\Authentication App\bin\System.Web.Webpages.Razor.xml
+M:\Authentication App\bin\System.Web.Helpers.xml
+M:\Authentication App\bin\System.Web.Mvc.xml
+M:\Authentication App\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+M:\Authentication App\obj\Debug\Authentication App.csproj.AssemblyReference.cache
+M:\Authentication App\obj\Debug\Authentication_App.Migrations.InitialData.resources
+M:\Authentication App\obj\Debug\Authentication App.csproj.GenerateResource.cache
+M:\Authentication App\obj\Debug\Authentication App.csproj.CoreCompileInputs.cache
+M:\Authentication App\obj\Debug\Authentication App.csproj.CopyComplete
+M:\Authentication App\obj\Debug\Authentication App.dll
+M:\Authentication App\obj\Debug\Authentication App.pdb

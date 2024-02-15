@@ -1,0 +1,175 @@
+﻿@model Authentication_App.ViewModels.EditViewModel
+
+
+@{
+    ViewBag.Title = "Edit Profile";
+    Layout = "~/Areas/Customer/Views/Shared/Customer_LayoutPage1.cshtml";
+}
+
+<style>
+    form {
+        width: 60%;
+        margin: 20px auto;
+        border: 2px solid black;
+        padding: 20px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        height: 40px;
+    }
+
+    label {
+        font-size: 15px;
+        font-weight: bold;
+        display: block;
+    }
+
+    .form-group {
+        margin: 10px auto;
+    }
+
+
+    .custom-submit {
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-edit-submit {
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 40px;
+        background-color: #ABF62D;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .btn-edit-back {
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 40px;
+        background-color: #c15f5f;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+    .btn-edit-submit:hover {
+        background-color: #7fbd2b;
+    }
+
+    .btn-edit-back:hover {
+        background-color: #a13b3b;
+    }
+
+    .field-validation-error, .validation-summary-errors {
+        display: block;
+        color: red;
+        text-align: center;
+    }
+
+
+    .heading {
+        text-align: center;
+        border: 1px solid;
+        padding: 10px;
+        font-size: 20px;
+        background-color: #ABF62D;
+    }
+
+
+
+    .heading_photo {
+        text-align: center;
+        width: 40%;
+        margin: 10px auto;
+        font-size: 15px;
+        font-weight: bold;
+        display: block;
+    }
+    .profilePhoto {
+display: block;
+        margin: 2px auto;
+        width: 100px;
+        height: 100px;
+    }
+    
+
+    .input_photo{
+        display:block;
+        width: 40%;
+        margin: 5px auto;
+        padding: 10px;
+        border-radius:5px;
+       
+    }
+
+    .edit{
+        background-color: white;
+    }
+    
+
+</style>
+
+<form class="form" action="/Customer/Customer/EditProfile" method="post" enctype="multipart/form-data">
+    <div class="heading">Edit Profile</div>
+    <div class="form-group">
+        <h2 class="heading_photo">Profile Photo</h2>
+        <img class="profilePhoto" src="data:image/png;base64,@Model.ProfilePhoto" />
+        <input type="file" name="ProfilePhoto" class="input_photo" accept=".jpg, .png" />
+    </div>
+    <div class="form-group">
+        <label for="UserName">User Name</label>
+        <input type="text" class="form-control" id="UserName" name="UserName" value="@Model.UserName" />
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" class="form-control" id="Email" name="Email" value="@Model.Email" />
+    </div>
+    <div class="form-group">
+        <label for="PhoneNumber">Phone Number</label>
+        <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber" />
+    </div>
+    <div class="form-group">
+        <label for="DateOfBirth">Date Of Birth</label>
+        <input type="date" class="form-control" id="DateOfBirth" name="DateOfBirth" value="@Model.DateOfBirth.ToString("yyyy-MM-dd")" />
+    </div>
+    <div class="form-group">
+        <label for="Address">Address</label>
+        <input type="text" class="form-control" id="Address" name="Address" value="@Model.Address" />
+    </div>
+
+    <div class="form-group">
+        <label for="Country">Country</label>
+        <input type="text" class="form-control" id="Country" name="Country" value="@Model.Country" />
+    </div>
+
+    <p class="field-validation-error">
+        @ViewBag.Message
+    </p>
+    <div class="custom-submit">
+        <button type="submit" class="btn btn-edit-submit">Save</button>
+        <a class="btn btn-edit-back" href="@Url.Action("CustomerDashboard", "Customer")">Cancel</a>
+    </div>
+</form>

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>@ViewBag.Title</title>
+
+    <style>
+        html {
+            margin: 0px 0px 100px 0px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .error-message, .validation-summary-errors {
+            color: red;
+        }
+
+        .custom-navbar {
+            background-color: #ABF62D;
+            align-items: center;
+            display: flex;
+            height: 40px;
+        }
+
+        .custom-navbar-brand {
+            height: 100%;
+            font-size: 25px;
+            color: #abf62d;
+            padding: 5px 20px;
+            font-style: italic;
+            font-weight: bold;
+            text-decoration: none;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #030302 10%, #949494 40%, #909090 50%, #000000 70%);
+        }
+
+        .custom-navbar-nav {
+            height: 40px;
+            float: right;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+            .custom-navbar-nav li {
+          
+                list-style: none;
+                padding: 0 10px;
+                margin: 0px;
+                display: inline-block;
+            }
+
+                .custom-navbar-nav li a {
+                    box-sizing:border-box;
+                    color: black;
+                    font-size: 18px;
+                   /**//* font-weight: bold;*/
+                    border-radius: 5px;
+                    padding: 5px 10px;
+                    text-decoration: none;
+                    line-height: 40px; /* line-height for vertical centering */
+                }
+
+                .custom-navbar-nav li:hover {
+                    background-color: #ccc;
+                }
+    </style>
+
+
+</head>
+<body>
+    <div class="custom-navbar">
+        <a class="custom-navbar-brand" href="/home/index">ImgCompress</a>
+        <ul class="custom-navbar-nav">
+            <li class="custom-nav-item register">
+                <a class="custom-btn" href="/account/register">Register</a>
+            </li>
+            <li class="custom-nav-item login">
+                <a class="custom-btn" href="/account/login">Login</a>
+            </li>
+
+
+        </ul>
+    </div>
+
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+</body>
+</html>

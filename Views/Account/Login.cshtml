@@ -1,0 +1,157 @@
+﻿
+@model Authentication_App.ViewModels.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<style>
+
+    form {
+        width: 50%;
+        margin: 20px auto;
+        border: 2px solid black;
+        padding: 20px;
+
+    }
+
+    .login {
+        background-color: white;
+    }
+
+    .row {
+        align-items: center;
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    input {
+        width: 90%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+        height: 40px;
+    }
+
+    label {
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+    }
+
+    .col {
+        width: 80%;
+        margin: 10px auto;
+        padding: 10px;
+        display: block;
+    }
+
+
+    .custom-submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-success {
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 40px;
+        background-color: #ABF62D;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .btn-cancel {
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 40px;
+        background-color: #c15f5f;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .btn-success:hover {
+        background-color: #7fbd2b;
+    }
+
+    .btn-cancel:hover {
+        background-color: #a13b3b;
+    }
+
+    .field-validation-error, .validation-summary-errors {
+        display: block;
+        color: red;
+    }
+
+    .alert-warning {
+        display: block;
+        text-align: center;
+        color: red;
+    }
+
+    .heading {
+        text-align: center;
+        border: 1px solid;
+        padding: 10px;
+        font-size: 20px;
+        background-color: #ABF62D;
+    }
+</style>
+
+
+
+<body>
+
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="heading">
+                Login Page
+            </div>
+            <div class="col">
+                @Html.LabelFor(temp => temp.Email)
+                @Html.TextBoxFor(temp => temp.Email, new { placeholder = "Email", @class = "form-control" })
+                @Html.ValidationMessageFor(temp => temp.Email)
+            </div>
+            <div class="col">
+                @Html.LabelFor(temp => temp.Password)
+                @Html.PasswordFor(temp => temp.Password, new { placeholder = "Password", @class = "form-control" })
+                @Html.ValidationMessageFor(temp => temp.Password)
+            </div>
+
+            <div class="custom-submit">
+
+                <button type="submit" class="btn btn-success">Login</button>
+                <button type="button" class="btn btn-cancel" onclick='redirectToAnotherAction("Index","Home")'>Cancel</button>
+            </div>
+            <p class="alert-warning ">
+                @ViewBag.Message
+            </p>
+        </div>
+    }
+
+    <script>
+        function redirectToAnotherAction(actionName, controllerName) {
+            window.location.href = "/" + controllerName + "/" + actionName;
+        }
+    </script>
+</body>
+
+

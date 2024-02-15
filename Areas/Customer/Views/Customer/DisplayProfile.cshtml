@@ -1,0 +1,147 @@
+﻿@model Authentication_App.Identity.ApplicationUser
+
+@{
+    ViewBag.Title = "DisplayProfile";
+    Layout = "~/Areas/Customer/Views/Shared/Customer_LayoutPage1.cshtml";
+}
+
+<style>
+
+    h2 {
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    .user-details-photo {
+        height: 150px;
+        width: 150px;
+        margin: 0px auto;
+        padding: 5px;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+
+        .user-details-photo img {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+        }
+
+    .table {
+        margin: 20px auto;
+        width: 80%;
+        border: 2px solid black;
+        padding: 20px;
+        border-collapse: collapse;
+    }
+
+    tr {
+        height: 50px;
+    }
+
+    td, th {
+        font-size: 20px;
+        border: 1px solid black;
+        text-align: center;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    th {
+        width: 40%;
+    }
+
+    .title-bar {
+        background-color: #ABF62D;
+        color: white;
+        font-weight: bold;
+    }
+
+    .btn-user-details-back {
+        margin: 10px;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+
+    .back-div {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-user-details-back {
+        background-color: grey;
+
+    }
+
+        .btn-user-details-back:hover {
+            background-color: #515050;
+
+        }
+
+    .displayProfile{
+        background-color: white;
+    }
+</style>
+
+<h2>Profile</h2>
+<div class="user-details-photo">
+    <img src="data:image/png;base64,@Model.ProfilePhoto" alt="Encoded Image">
+</div>
+<table class="table">
+    <tr>
+        <th class="title-bar">Field</th>
+        <th class="title-bar">Value</th>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>@Model.UserName</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>Mobile</th>
+        <td>@Model.PhoneNumber</td>
+    </tr>
+    <tr>
+        <th>DateOfBirth</th>
+        <td>@Model.DateOfBirth.Value.ToString("d/M/yyyy")</td>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <td>@Model.Address</td>
+    </tr>
+    <tr>
+        <th>Country</th>
+        <td>@Model.Country</td>
+    </tr>
+    <tr>
+        <th>User Deactivated ?</th>
+        @if (@Model.isDisabled)
+        {
+            <td>Yes </td>
+        }
+        else
+        {
+            <td> No </td>
+        }
+    </tr>
+
+
+
+</table>
+<div class="back-div">
+    <a class="btn btn-user-details-back" href="@Url.Action("CustomerDashboard", "Customer")">Back</a>
+
+</div>

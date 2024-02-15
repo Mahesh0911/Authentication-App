@@ -1,0 +1,168 @@
+﻿@model List<Authentication_App.Identity.ApplicationUser>
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_LayoutPage1.cshtml";
+}
+
+
+<style>
+
+    h2 {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .table {
+        box-sizing: border-box;
+        margin: 10px auto;
+        width: 100%;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+
+    thead {
+        background-color: #ABF62D;
+        font-weight: bold;
+        height: 50px;
+    }
+
+    td {
+        height: auto;
+        border: 1px solid black;
+        text-align: center;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .btn {
+        margin: 5px;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .btn-details {
+        background-color: #44b607;
+    }
+
+        .btn-details:hover {
+            background-color: #2d7507;
+        }
+
+    .btn-act {
+        background-color: grey;
+    }
+
+    .btn-deact {
+        background-color: orange;
+    }
+
+    .btn-act:hover {
+        background-color: #595656;
+    }
+
+    .btn-deact:hover {
+        background-color: #b97d0f;
+    }
+
+
+
+    .acts {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .users-btn-back {
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 30px;
+        background-color: grey;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .users-btn-back:hover {
+            background-color: #515050;
+        }
+
+    .profiles{
+        background-color: white;
+    }
+</style>
+
+
+<h2>Users</h2>
+
+<table class="table">
+
+    <thead>
+        <tr>
+
+            <td>Profile Photo</td>
+            <td>Username</td>
+            <td>Email</td>
+            <td>Country</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.UserName != "admin")
+            {
+                <tr>
+                    <td>
+                        <img src="data:image;base64,@item.ProfilePhoto" alt="Encoded Image" style="height:100px;width:100px;border-radius:50%">
+                    </td>
+                    <td>@item.UserName</td>
+                    <td>@item.Email</td>
+                    <td>@item.Country</td>
+                    <td>
+                        <div class="acts">
+                            @{
+                                // Assuming 'item' is your model and 'IsDisabled' is a property indicating whether the user is disabled
+                                bool isDisabled = item.isDisabled;
+                            }
+
+                            <a href="@Url.Action("UserDetails", "Users", new { email = item.Email })" class="btn btn-details">Details</a>
+
+                            @if (isDisabled)
+                            {
+                                <a href="@Url.Action("Activate", new { email = item.Email })" class="btn btn-act">Activate</a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Deactivate", new { email = item.Email })" class="btn btn-deact">Deactivate</a>
+                            }
+
+                        </div>
+
+                    </td>
+
+                </tr>
+            }
+        }
+    </tbody>
+
+
+</table>
+
+<a class="users-btn-back" href="@Url.Action("admin","Admin")">Back</a>

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>@ViewBag.Title</title>
+    <style>
+        html {
+            margin: 0px 0px 100px 0px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .error-message, .validation-summary-errors {
+            color: red;
+        }
+
+        .custom-navbar {
+            background-color: #ABF62D;
+            align-items: center;
+            display: flex;
+            height: 40px;
+        }
+
+        .custom-navbar-brand {
+            height: 100%;
+            font-size: 25px;
+            color: #abf62d;
+            padding: 5px 20px;
+            font-style: italic;
+            font-weight: bold;
+            text-decoration: none;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #030302 10%, #949494 40%, #909090 50%, #000000 70%);
+        }
+
+        .custom-navbar-nav {
+            height: 100%;
+            float: right;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+            .custom-navbar-nav li {
+                list-style: none;
+                padding: 0 10px;
+                margin: 0px;
+                display: inline-block;
+            }
+
+                .custom-navbar-nav li a {
+                    color: black;
+                    font-size: 20px;
+                    border-radius: 5px;
+                    padding: 5px 10px;
+                    text-decoration: none;
+                    line-height: 40px; /* line-height for vertical centering */
+                }
+
+                .custom-navbar-nav li:hover {
+                    background-color: #ccc;
+                }
+
+        .text-white {
+            line-height: 50px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .custom-navbar-nav li:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-navbar">
+        <a class="custom-navbar-brand" href="#">ImgCompress</a>
+        <ul class="custom-navbar-nav">
+            <li class="custom-nav-item profiles"><a class="custom-btn" href="@Url.Action("Users","Users")">Profiles</a></li>
+            <li class="nav-item logout"><a class="custom-btn" href="/account/logout">Logout</a></li>
+        </ul>
+
+        @if (User.Identity.IsAuthenticated == true)
+        {
+            <div class="text-white">
+                Welcome, @User.Identity.Name
+            </div>
+        }
+    </div>
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+</body>
+</html>
+
+
+
+

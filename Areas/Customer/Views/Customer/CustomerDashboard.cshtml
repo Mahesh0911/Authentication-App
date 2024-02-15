@@ -1,0 +1,179 @@
+﻿
+@{
+    ViewBag.Title = "Customer Dashboard";
+    Layout = "~/Areas/Customer/Views/Shared/Customer_LayoutPage1.cshtml";
+}
+
+<style>
+    .compressorClass{
+display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        
+    }
+    #imageInput{
+margin: 20px;
+padding: 10px;
+border: 2px solid black;
+    }
+    #maxSize {
+        margin: 20px;
+        padding: 10px;
+        border: 2px solid black;
+    }
+    #compressionParam {
+        margin: 20px;
+        padding: 10px;
+        border: 2px solid black;
+    }
+    button {
+        margin: 10px;
+        padding: 10px 15px;
+        background-color:red;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+        button:hover {
+            background-color: #bf0404;
+        }
+    #originalImage {
+        margin: 20px;
+        padding: 10px;
+        border: 2px solid black;
+    }
+    #compressedImage {
+
+        margin: 20px;
+        padding: 10px;
+        border: 2px solid black;
+    }
+    #downloadButton {
+        margin: 10px;
+        padding: 10px 15px;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 5px;
+        background-color: red;
+    }
+        #downloadButton:hover {
+            background-color: #bf0404;
+        }
+
+    label{
+        font-size:20px;
+        text-decoration:underline;
+
+    }
+    #block_heading {
+        margin: 20px;
+        padding: 10px;
+        font-size: 20px;
+        background-color: #abf62d;
+        border-radius: 8px;
+    }
+    hr{
+width: 50%;
+margin-bottom:20px;
+    }
+</style>
+
+<div class="compressorClass">
+    <h3 id="block_heading">Upload Image to Compress</h3>
+    <hr >
+    <input type="file" accept="image/*" id="imageInput" />
+    <hr >
+    <label for="maxSize">Max Size (KB): </label>
+    <input type="number" id="maxSize" min="1" step="1" />
+    <hr >
+    <label for="compressionParam">Compression Quality (0.1 - 1.0): </label>
+    <input type="number" id="compressionParam" min="0.1" max="1.0" step="0.1" />
+    <hr >
+    <button onclick="compressImage()">Compress Image</button>
+
+    <img id="originalImage" style="display: none;" />
+    <img id="compressedImage" style="display: none;" />
+
+    <a id="downloadButton" download="compressed_image.jpg" onclick="downloadImage()" style="display: none;">Download Compressed Image</a>
+
+    <script>
+        function compressImage() {
+            const input = document.getElementById('imageInput');
+            const maxSize = document.getElementById('maxSize').value;
+            const compressionParam = document.getElementById('compressionParam').value;
+
+            if (!input.files.length) {
+                alert('Please select an image.');
+                return;
+            }
+
+            const file = input.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const originalImage = new Image();
+                originalImage.src = e.target.result;
+
+                originalImage.onload = function () {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+
+                    const maxWidth = 500; // Adjust the maximum width as needed
+                    const maxHeight = 500; // Adjust the maximum height as needed
+
+                    let width = originalImage.width;
+                    let height = originalImage.height;
+
+                    if (width > height) {
+                        if (width > maxWidth) {
+                            height *= maxWidth / width;
+                            width = maxWidth;
+                        }
+                    } else {
+                        if (height > maxHeight) {
+                            width *= maxHeight / height;
+                            height = maxHeight;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+
+                    ctx.drawImage(originalImage, 0, 0, width, height);
+
+                    const compressedDataURL = canvas.toDataURL('image/jpeg', compressionParam);
+
+                    const compressedImage = document.getElementById('compressedImage');
+                    compressedImage.src = compressedDataURL;
+                    compressedImage.style.display = 'block';
+
+                    const downloadButton = document.getElementById('downloadButton');
+                    downloadButton.style.display = 'inline-block';
+                };
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        function downloadImage() {
+            const compressedImage = document.getElementById('compressedImage');
+            const downloadButton = document.getElementById('downloadButton');
+
+            const link = document.createElement('a');
+            link.href = compressedImage.src;
+            link.download = downloadButton.download;
+            link.click();
+        }
+    </script>
+
+</div>
+
+
